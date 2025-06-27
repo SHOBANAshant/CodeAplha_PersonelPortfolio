@@ -1,0 +1,863 @@
+pdf<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shobana | Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        body {
+    background-color: #0a0a0a;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden; /* Prevents horizontal scrolling but allows vertical */
+}
+
+        .background {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+        }
+
+        .code-line {
+            position: absolute;
+            font-size: 1rem;
+            color: rgba(0, 255, 150, 0.7);
+            font-family: monospace;
+            white-space: nowrap;
+            opacity: 0.8;
+            animation: moveUp 10s linear infinite;
+        }
+
+        @keyframes moveUp {
+            from {
+                transform: translateY(100vh);
+                opacity: 1;
+            }
+            to {
+                transform: translateY(-10vh);
+                opacity: 0;
+            }
+        }
+
+        .container {
+            margin-top: 130px;
+            text-align: left;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 80%;
+            z-index: 1;
+        }
+
+        .text-content {
+            max-width: 50%;
+        }
+
+        .name {
+            font-size: 3.5rem;
+            font-weight: bold;
+        }
+
+        .highlight {
+            color: #FFD700;
+        }
+
+        .laptop {
+            width: 700px;
+            height: 450px;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-left: -50px;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .laptop img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 10px;
+            box-shadow: 0 0 15px #FFD43B;
+        }
+
+        .buttons {
+            
+            display: flex;
+            gap: 30px;
+            margin-top: 30px;
+        }
+        section {
+    min-height: 100vh;
+    padding: 50px;
+}
+
+        .button {
+            content: "SHIFT";
+            position: relative;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            cursor: pointer;
+            color: white;
+            font-weight: bold;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            
+            justify-content: center;
+            transition: all 0.2s ease-in-out;
+            background: linear-gradient(to bottom, #444, #111);
+            box-shadow: inset -2px -2px 6px rgba(255, 255, 255, 0.3),
+                        inset 2px 2px 6px rgba(0, 0, 0, 0.8),
+                        5px 5px 15px rgba(0, 0, 0, 0.9);
+        }
+        .button:hover {
+            background: linear-gradient(to bottom, #3a3a3a, #222);
+            box-shadow: 0 0 15px #FFD43B, inset -2px -2px 6px rgba(255, 255, 255, 0.3), inset 2px 2px 6px rgba(0, 0, 0, 0.8);
+            transform: translateY(-2px);}
+
+        .navbar {
+            position: fixed;
+            top: 20px;
+            right: 40px;
+            display: flex;
+            gap: 20px;
+            z-index: 10;
+        }
+
+        .nav-button {
+            padding: 12px 25px;
+            font-size: 1rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            background: linear-gradient(to bottom, #2e2e2e, #1a1a1a);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: inset -2px -2px 6px rgba(255, 255, 255, 0.2),
+                        inset 2px 2px 6px rgba(0, 0, 0, 0.9),
+                        3px 3px 6px rgba(0, 255, 255, 0.3);
+            transition: all 0.2s ease-in-out;
+            font-family: 'Poppins', sans-serif;
+            text-shadow: 0px 0px 5px #FFD43B;
+            position: relative;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-button::before {
+            content: "";
+            position: absolute;
+            top: 5px;
+            left: 8px;
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.5);
+        }
+        .nav-button {
+    margin: 10px; /* Adds spacing between buttons */
+    padding: 12px 20px;
+    font-size: 18px;
+}
+
+        .nav-button:hover {
+            background: linear-gradient(to bottom, #3a3a3a, #222);
+            box-shadow: 0 0 15px #FFD43B, inset -2px -2px 6px rgba(255, 255, 255, 0.3), inset 2px 2px 6px rgba(0, 0, 0, 0.8);
+            transform: translateY(-2px);
+        }
+
+        .nav-button:active {
+            box-shadow: inset 3px 3px 6px rgba(0, 0, 0, 0.7),
+                        inset -3px -3px 6px rgba(255, 255, 255, 0.2);
+            transform: translateY(2px);
+        }
+        
+    .scroll-buttons {
+        position: fixed;
+        bottom: 40px;
+        right: 40px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        z-index: 10;
+    }
+
+
+    .scroll-btn {
+        width: 60px;
+        height: 60px;
+        border-radius: 8px;
+        background: linear-gradient(to top, #1e1e1e, #333); /* 3D effect */
+        color: white;
+        font-size: 1.8rem;
+        font-family: 'Poppins', sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+        border: 2px solid #555;
+        text-shadow: 0px 0px 5px #FFD43B;
+        box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5), /* Outer shadow */
+                    inset -2px -2px 4px rgba(255, 255, 255, 0.2), /* Inner top highlight */
+                    inset 2px 2px 4px rgba(0, 0, 0, 0.8); /* Inner bottom shadow */
+    }
+
+    .scroll-btn:hover {
+        background: linear-gradient(to top, #2a2a2a, #444);
+        box-shadow: 0 0 15px #FFD43B, 3px 3px 8px rgba(0, 0, 0, 0.5);
+        transform: translateY(-2px);
+    }
+
+    .scroll-btn:active {
+        background: linear-gradient(to top, #111, #222);
+        box-shadow: inset 3px 3px 6px rgba(0, 0, 0, 0.7),
+                    inset -3px -3px 6px rgba(255, 255, 255, 0.2);
+        transform: translateY(2px);
+    }
+    .social-icons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px; /* Adds spacing between icons */
+}
+
+    .social-buttons {
+        position: fixed;
+        top: 280px;
+        bottom: 40px;
+        left: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        z-index: 10;
+    }
+
+    .social-btn {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background: linear-gradient(to top, #1e1e1e, #333);
+        color: white;
+        font-size: 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+        border: 2px solid #555;
+        text-shadow: 0px 0px 5px #FFD43B;
+        box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5), 
+                    inset -2px -2px 4px rgba(255, 255, 255, 0.2), 
+                    inset 2px 2px 4px rgba(0, 0, 0, 0.8);
+    }
+    .button i {
+  margin-left: 8px; /* Adjust the spacing as needed */
+}
+
+
+    .social-btn:hover {
+        background: linear-gradient(to top, #2a2a2a, #444);
+        box-shadow: 0 0 15px #FFD43B, 3px 3px 8px rgba(0, 0, 0, 0.5);
+        transform: translateY(-2px);
+    }
+
+    .social-btn:active {
+        background: linear-gradient(to top, #111, #222);
+        box-shadow: inset 3px 3px 6px rgba(0, 0, 0, 0.7),
+                    inset -3px -3px 6px rgba(255, 255, 255, 0.2);
+        transform: translateY(2px);
+    }
+    .about-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    padding: 50px 0;
+    background-color: #121212;
+    color: white;
+    margin-top: -30px; /* Adjust as needed */
+    text-align: center;
+}
+
+.about-title {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #FFD700;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px #FFD43B;
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 80%;
+    max-width: 1200px;
+}
+
+.about-image {
+    position: relative; /* Ensures z-index works */
+}
+
+.about-image img {
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    box-shadow: 0 0 15px #FFD43B;
+    object-fit: cover;
+    position: relative; /* Brings it above other elements */
+    z-index: 10; /* Higher value ensures it stays on top */
+}
+
+
+.about-content {
+    max-width: 50%;
+    text-align: left;
+    padding: 20px;
+    border: 3px solid #FFD43B; /* Glowing border */
+    box-shadow: 0 0 15px #FFD43B; /* Soft glow effect */
+    border-radius: 15px;
+    background: #334155(0, 0, 0, 0.8); /* Semi-transparent dark background */
+    backdrop-filter: blur(10px); /* Blur effect */
+}
+
+.about-content h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: rgb(255, 230, 0); /* Adjust color if needed */
+    text-align: center;
+}
+
+.about-content p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+.education-section {
+        text-align: center;
+        padding: 50px 20px;
+        background: #111;
+        color: #fff;
+    }
+
+    .section-title {
+        font-size: 2em;
+        color: #FFD700; /* Yellow */
+        text-transform: uppercase;
+        margin-bottom: 30px;
+        margin-top: -40px;
+    }
+
+    .education-container {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .education-box {
+        background: rgba(255, 255, 255, 0.1);
+        padding: 20px;
+        border-radius: 10px;
+        width: 300px;
+        text-align: center;
+        transition: 0.3s;
+        border: 2px solid #FFD43B; /* Yellow border */
+        box-shadow: 0 0 10px #FFD43B; /* Yellow glow */
+        position: relative;
+        
+    }
+
+    .education-box:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 20px #FFD43B;;
+    }
+
+    .edu-logo {
+    width: 120px; /* Adjust size as needed */
+    height: 120px;
+    object-fit: contain; /* Ensures full visibility */
+    display: block;
+    margin: 0 auto;
+    transition: transform 0.3s ease-in-out; /* Smooth zoom transition */
+    transform: scale(0.9); /* Slight zoom-out effect */
+}
+
+/* Hover effect if you want zoom-in on hover */
+.edu-logo:hover {
+    transform: scale(1); /* Zooms back to normal size */
+}
+    h3 {
+        color: #ffcc00; /* Yellow */
+    }
+    /* Section Title */
+/* Section Title */
+.section-title {
+    text-align: center;
+    color: #ffcc00;
+    font-size: 2em;
+    margin-bottom: 20px;
+    margin-top: -20px;
+}
+
+/* Flip Card Container */
+.projects-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+   
+    
+}
+
+.flip-card {
+    width: 250px;
+    height: 300px;
+    perspective: 1000px;
+    padding: 20px;
+    
+}
+
+.flip-card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+    
+}
+
+.flip-card-front, .flip-card-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 40px; 
+    margin: 10px;
+    border-radius: 6px;
+    
+    padding: 25px;
+    background: #1a1a1a; /* Dark background */
+    color: #fff;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+    border: 2px solid #FFD43B;
+    box-shadow: 0 0 20px #FFD43B;
+    
+}
+
+.flip-card-front {
+    background: #1a1a1a;
+}
+
+.project-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    color: #ffcc00;
+}
+
+.project-description {
+    font-size: 12px;
+    line-height: 1.4;
+    padding: 10px;
+}
+
+.flip-card-back {
+    background: #212121;
+    transform: rotateY(180deg);
+}
+
+.flip-card-back img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+
+.internship-section {
+  padding: 30px 20px;
+  background: #100f0f;
+  text-align: center;
+}
+
+.internship-section h2 {
+  font-size: 2rem;
+  color: #FFD43B;
+  margin-bottom: 20px;
+}
+
+.internship-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  width: 280px;
+  padding: 20px;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card-header {
+  background: #FFD43B;
+  color: white;
+  padding: 10px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 16px;
+}
+
+.card p {
+  font-size: 0.92rem;
+  color: #444;
+  line-height: 1.5;
+}
+
+
+
+       
+
+
+
+
+
+    </style>
+</head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<body>
+    <div class="background"></div>
+    <div class="navbar">
+        <button class="nav-button" onclick="scrollToSection('about')">About Me</button>
+        <button class="nav-button" onclick="scrollToSection('education')">Education</button>
+        <button class="nav-button" onclick="scrollToSection('projects')">Projects</button>
+        <button class="nav-button" onclick="scrollToSection('Skills')">Skills</button>
+        <button class="nav-button" onclick="scrollToSection('internships')">Internships</button>
+    </div>
+    <div class="container">
+        <div class="text-content">
+            <h1 class="name">Hello, this is <span class="highlight">Shobana Velmurugan</span></h1>
+            <h2 class="title" id="role"></h2>
+            <div class="buttons">
+                <a href="mailto:shob22042.cd@rmkec.ac.in" class="button contact-btn">
+                    CONTACT ME <i class="fas fa-phone"></i>
+                </a>
+                <a href="Shobana_V_Resume (1).pdf" class="button resume-btn" download="Shobana_V_Resume.pdf">
+                    GET RESUME <i class="fas fa-download"></i>
+                </a>
+            </div>
+        </div>
+        <div class="laptop">
+            <img src="Fruits.png" alt="Contact Information">
+        </div>
+    </div>
+    <div class="scroll-buttons">
+        <button class="scroll-btn" onclick="scrollUp()">↑</button>
+        <button class="scroll-btn" onclick="scrollDown()">↓</button>
+    </div>
+    <!-- Social Buttons Section -->
+    <div class="social-buttons">
+        <a href="mailto:shob22042.cd@rmkec.ac.in" class="social-btn" target="blank" title="Mail">
+            <i class="fa-regular fa-envelope fa-beat-fade" style="color: #FFD43B;"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/shobana04" class="social-btn" target="blank" title="LinkedIn">
+            <i class="fa-brands fa-linkedin fa-beat-fade" style="color: #FFD43B;"></i>
+        </a>
+        <a href="https://github.com/SHOBANAshant" class="social-btn" target="blank" title="GitHub">
+            <i class="fa-brands fa-github fa-beat-fade" style="color: #FFD43B;"></i>
+        </a>
+    </div>
+    <section id="about" class="about-section">
+        <div class="about-container">
+            <div class="about-image">
+                <img src="shobana.jpeg" alt="Shobana Velmurugan" width="200" height="200">
+
+            </div>
+            <div class="about-content">
+                <h2>About Me</h2>
+                <p style="text-align: justify;">
+                    I'm Shobana, a passionate UI/UX designer, frontend developer, and graphic artist,
+                     currently pursuing a B.E. in Computer Science and Design at RMK Engineering College.
+                      I love combining technology and creativity to build intuitive, visually appealing, 
+                      and user-friendly digital experiences.
+                </p>
+                <p style="text-align: justify;">
+                    With a strong foundation in graphic design, user experience principles, and interactive development, 
+                    I focus on crafting designs that are both functional and aesthetically engaging. I’m always eager to 
+                    explore new trends, experiment with innovative ideas, and push creative boundaries.
+                </p>
+            </div>
+        </div>
+    </section>
+    <section id="education" class="education-section">
+        <h2 class="section-title">Education</h2>
+        <div class="education-container">
+            <div class="education-box">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/RMK_Engineering_College.gif" alt="RMK Logo" class="edu-logo">
+                <h3>RMK Engineering College</h3>
+                <p><strong>Degree:</strong> B.E - Computer Science and Design</p>
+                <p><strong>Year:</strong> 2022 - 2026</p>
+                <p><strong>CGPA:</strong> 9.3</p>
+            </div>
+            <div class="education-box">
+                <img src="ssvs.png" alt="SSVS Logo" class="edu-logo">
+                <h3>Higher Secondary</h3>
+                <p><strong>School:</strong> Sri Saraswathi Vidhyaalaya Matric Hr Sec School</p>
+                <p><strong>Year:</strong> 2021 - 2022</p>
+                <p><strong>Percentage:</strong> 93.67%</p>
+            </div>
+            <div class="education-box">
+                <img src="ssvs.png" alt="SSVS Logo" class="edu-logo">
+                <h3>SSLC</h3>
+                <p><strong>School:</strong> Sri Saraswathi Vidhyaalaya Matric Hr Sec School</p>
+                <p><strong>Year:</strong> 2019 - 2020</p>
+                <p><strong>Percentage:</strong> 95.4%</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="projects">
+        <h2 class="section-title">MY PROJECTS</h2>
+        
+                <!-- Front Side (Title at Top & Description Below) -->
+                <div class="projects-container">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <span class="project-title">Theervu Kural</span>
+                                <p class="project-description">
+                                    Developed a web platform empowering rural residents to report local issues directly to village panchayat heads, ensuring swift resolution.
+
+Designed a user-friendly interface for seamless issue submission.
+Implemented a tracking system to enhance transparency and accountability in the resolution process.
+                                </p>
+                            </div>
+                            <div class="flip-card-back">
+                                <img src="vc.png" alt="Theervu Kural Project">
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <span class="project-title">VR Blueprint</span>
+                                <p class="project-description">
+                                    An immersive Virtual Reality experience designed to help school students explore human anatomy interactively.
+
+Provides a hands-on 3D learning environment, making complex biological concepts easier to understand.
+Enhances engagement and improves retention through interactive exploration.
+                                </p>
+                            </div>
+                            <div class="flip-card-back">
+                                <img src="https://cdn.mos.cms.futurecdn.net/U5DriGbHnMjnpYyPx5g7aU-1200-80.jpg" alt="AgriCycle Project">
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <span class="project-title">Farm Connect</span>
+                                <p class="project-description">
+                                    Farm Connect is a smart agricultural marketplace that connects farmers, customers, and delivery agents on a single digital platform. It allows farmers to list products, customers to purchase them, and delivery agents to manage logistics. The platform features role-based dashboards, multi-language voice assistance, and secure authentication using Firebase.
+                                </p>
+                            </div>
+                            <div class="flip-card-back">
+                                <img src="c:\Users\Shobana\OneDrive\Pictures\Screenshots\Screenshot 2025-03-24 221648.png" alt="Portfolio Website">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+    </section>
+    <section id="Skills" >
+       
+  <h2 style="font-size: 2.2rem; text-align: center; margin-bottom: 60px;">BACKGROUND SKILLS</h2>
+  <!-- Background Section -->
+<div style="display: flex; flex-wrap: wrap; gap: 30px; justify-content: center;">
+  <!-- Left Box: Skills -->
+  <div style="background-color: #0f172a; color: #f5f5f5; padding: 30px; box-shadow: 0 0 15px #FFD43B;border-radius: 16px; width: 320px;">
+    <!-- Your Design Skills content here -->
+    <h3 style="font-size: 1.8rem; margin-bottom: 40px;">Design Skills</h3>
+
+    <div style="margin-bottom: 25px;">
+      <p>Graphic Design - 90%</p>
+      <div style="height: 14px; background: #334155; border-radius: 10px;">
+        <div style="width: 90%; height: 100%; background: #FFD43B; border-radius: 10px;"></div>
+      </div>
+    </div>
+
+    <div style="margin-bottom: 25px;">
+      <p>UI Design - 80%</p>
+      <div style="height: 14px; background: #334155; border-radius: 10px;">
+        <div style="width: 80%; height: 100%; background: #FFD43B; border-radius: 10px;"></div>
+      </div>
+    </div>
+
+    <div style="margin-bottom: 25px;">
+      <p>Visual Branding - 85%</p>
+      <div style="height: 14px; background: #334155; border-radius: 10px;">
+        <div style="width: 85%; height: 100%; background: #FFD43B; border-radius: 10px;"></div>
+      </div>
+    </div>
+
+    <div>
+      <p>Creative Layout - 90%</p>
+      <div style="height: 14px; background: #334155; border-radius: 10px;">
+        <div style="width: 90%; height: 100%; background: #FFD43B; border-radius: 10px;"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Right Box: Images -->
+   <div style="background-color: #0f172a; color: #FFD43B; padding: 30px; box-shadow: 0 0 15px #FFD43B;border-radius: 16px; width: 320px;">
+    <h3 style="font-size: 1.8rem; margin-bottom: 30px;">Tech Stack</h3>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+      <img src="html.png" alt="Design 1" style="width: 100%; border-radius: 10px;">
+      <img src="css.png" alt="Design 2" style="width: 100%; border-radius: 10px;">
+      <img src="java.png" alt="Design 3" style="width: 100%; border-radius: 10px;">
+      <img src="sql.png" alt="Design 4" style="width: 100%; border-radius: 10px;">
+    </div>
+  </div>
+  
+<div style="background-color: #0f172a; color: #FFD43B; padding: 30px; border-radius: 16px; width: 100%; max-width: 680px; box-shadow: 0 0 15px #FFD43B; margin-top: 20px;">
+  <h3 style="margin-bottom: 20px; font-size: 1.5rem;">UI/UX & 3D Toolset</h3>
+
+  <div style="display: flex; gap: 25px; flex-wrap: wrap; align-items: center;">
+    <img src="Logo_Blender.svg.png" alt="Figma" style="height: 50px;  transition: transform 0.3s;">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c2/Adobe_XD_CC_icon.svg" alt="Adobe XD" style="height: 70px; transition: transform 0.3s;">
+    <img src="figma.png" style="height: 60px;  border-radius: 6px; padding: 4px; background-color:white; transition:  0.3s;">
+    
+    <img src="unity.png" alt="Unity" style="height: 70px; transition: transform 0.3s;">
+  </div>
+</div>
+
+
+
+
+
+</section>
+<section id="internships" class="internship-section">
+  <h2>INTERNSHIP EXPERIENCE</h2>
+  <div class="internship-container">
+
+    <div class="card">
+      <div class="card-header">Java Programming Intern</div>
+      <p><strong>Internpe</strong><br>June 2024 – July 2024 (Online)</p>
+      <p>Built Java console apps like Guess the Number, Tic Tac Toe, and Connect Four. Improved logical thinking and core Java skills.</p>
+    </div>
+
+    <div class="card">
+      <div class="card-header">Graphic Design Intern</div>
+      <p><strong>CodeClause</strong><br>Feb 2024 – Mar 2024 (Online)</p>
+      <p>Created logos, brochures, smart home UI, and newsletter designs. Gained skills in branding and layout design.</p>
+    </div>
+
+    <div class="card">
+      <div class="card-header">Full Stack Intern</div>
+      <p><strong>Retech</strong><br>Dec 2023 – Jan 2024 (Online)</p>
+      <p>Worked on both frontend and backend development. Learned full stack tech and software deployment skills.</p>
+    </div>
+
+    <div class="card">
+      <div class="card-header">Idea Lab Intern</div>
+      <p><strong>RMKEC</strong><br>May 2023 – Aug 2023 (Thiruvallur)</p>
+      <p>Hands-on in 3D printing, Onshape, and modeling. Developed product design and prototyping experience.</p>
+    </div>
+
+  </div>
+</section>
+
+
+
+    
+    
+    
+    
+    <script>
+        function createCodeBackground() {
+            const background = document.querySelector('.background');
+            const codeSnippets = [
+                'const developer = "Shobana";',
+                'function createCode() { return true; }',
+                'let skills = ["HTML", "CSS", "JavaScript", "React"];',
+                'console.log("Hello, World!");'
+            ];
+
+            for (let i = 0; i < 30; i++) {
+                let codeLine = document.createElement('div');
+                codeLine.classList.add('code-line');
+                codeLine.textContent = codeSnippets[Math.floor(Math.random() * codeSnippets.length)];
+                codeLine.style.left = `${Math.random() * 100}vw`;
+                codeLine.style.top = `${Math.random() * 100}vh`;
+                codeLine.style.animationDuration = `${Math.random() * 5 + 5}s`;
+                background.appendChild(codeLine);
+            }
+        }
+        function scrollUp() {
+        window.scrollBy({
+            top: -window.innerHeight / 2,  // Scroll up by half the screen height
+            behavior: 'smooth'
+        });
+    }
+
+    function scrollToSection(sectionId) {
+    const section = document.getElementById(sectionId);
+    if (section) {
+        section.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+}
+
+    function scrollDown() {
+        window.scrollBy({
+            top: window.innerHeight / 2,  // Scroll down by half the screen height
+            behavior: 'smooth'
+        });
+    }
+        
+        createCodeBackground();
+    </script>
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+
+</body>
+</html>
